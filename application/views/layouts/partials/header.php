@@ -17,11 +17,17 @@
                         <?php endif; ?>
                     <?php endif; ?>
                 </ul>
-                <form class="navbar-form pull-right" action="<?php echo URL::site('session/login') ?>" method="POST">
-                    <input class="span2" type="text" placeholder="Email">
-                    <input class="span2" type="password" placeholder="Password">
-                    <button type="submit" class="btn">Sign in</button>
-                </form>
+                <?php if (!Auth::instance()->logged_in()): ?>
+                    <form class="navbar-form pull-right" action="<?php echo URL::site('session/login') ?>" method="POST">
+                        <input class="span2" type="text" placeholder="Email" name="email">
+                        <input class="span2" type="password" placeholder="Password" name="password">
+                        <button type="submit" class="btn">Sign in</button>
+                    </form>
+                <?php else: ?>
+                    <p class="navbar-text pull-right">
+                        Logged in as <a href="<?php echo URL::site('user/profile') ?>" class="navbar-link"><?php echo Auth::instance()->get_user()->first_name ?></a>
+                    </p>
+                <?php endif ?>
             </div><!--/.nav-collapse -->
         </div>
     </div>

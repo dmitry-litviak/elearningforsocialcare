@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
 
-$whitelist = array('apartments.loc');
+$whitelist = array('elearningforsocialcare.loc');
 if(in_array($_SERVER['HTTP_HOST'], $whitelist)){
 
     return array
@@ -22,7 +22,7 @@ if(in_array($_SERVER['HTTP_HOST'], $whitelist)){
                  * Ports and sockets may be appended to the hostname.
                  */
                 'hostname'   => 'localhost',
-                'database'   => 'apartments',
+                'database'   => 'elearningforsocialcare',
                 'username'   => 'root',
                 'password'   => 'root',
                 'persistent' => FALSE,

@@ -16,7 +16,7 @@ class Controller_Session extends My_Layout_User_Controller {
                     $status = Auth::instance()->login($this->request->post('email'), $this->request->post('password'));
                     $role = Auth::instance()->get_user()->roles->order_by('role_id', 'desc')->find()->name;
                     if ($status) {
-                        $this->redirect('/');
+                        $this->redirect('home/index');
                     } else {
                         Auth::instance()->logout();
                         Helper_Alert::setStatus('error');
