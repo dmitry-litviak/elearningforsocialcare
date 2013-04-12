@@ -12,9 +12,9 @@ return array(
                                                       'icon'    => 'icon-user',
                                                       'status'  => 0,
                                                       ),
-                                      "apartments"       => array(
-                                                      'title' 	=> 'Apartments',
-                                                      'url'    	=> 'admin/apartments',
+                                      "tests"       => array(
+                                                      'title' 	=> 'Tests',
+                                                      'url'    	=> 'admin/tests',
                                                       'icon'    => 'icon-home',
                                                       'status'  => 0,
                                                         ),    
