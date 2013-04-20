@@ -52,10 +52,10 @@ if(in_array($_SERVER['HTTP_HOST'], $whitelist)){
                  *
                  * Ports and sockets may be appended to the hostname.
                  */
-                'hostname'   => 'localhost',
-                'database'   => 'apartments',
-                'username'   => 'root',
-                'password'   => 'qwerfvbnm321Q',
+                'hostname'   => 'database.lcn.com',
+                'database'   => 'elearningforsocialcare_co_uk_db',
+                'username'   => 'LCN52890_train',
+                'password'   => 'elearning',
                 'persistent' => FALSE,
             ),
             'table_prefix' => '',

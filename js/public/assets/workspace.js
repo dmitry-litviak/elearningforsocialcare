@@ -1,0 +1,5 @@
+(function(){
+window.JST = window.JST || {};
+
+window.JST['question'] = _.template('        <div class="question">\n            <div class="control-group">\n                <label class="control-label" for="question">Question #<%= number  %></label>\n                <div class="controls">\n                    <textarea name="questions[]" class="textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>\n                </div>\n            </div>\n            <div class="control-group">\n                <label class="control-label" for="answer">Answer #<%= number  %></label>\n                <div class="controls">\n                    <input type="text" class="validate[required]" placeholder="Answer" name="answers[]">\n                </div>\n            </div>\n            <hr>\n        </div>');
+})();

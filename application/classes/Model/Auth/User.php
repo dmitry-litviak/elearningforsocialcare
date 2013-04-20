@@ -17,13 +17,8 @@ class Model_Auth_User extends ORM {
 	protected $_has_many = array(
 		'user_tokens'   => array('model' => 'User_Token'),
 		'roles'         => array('model' => 'Role', 'through' => 'roles_users'),
-                'apartments'    => array('model' => 'Apartment', 'through' => 'apartments_users'),
-                'alerts'        => array('model' => 'Alert'),
+                'results'        => array('model' => 'Result'),
 	);
-        protected $_belongs_to = array(
-		'user_profile' => array('model' => 'User_Profile'),
-	);
-
 	/**
 	 * Rules for the user model. Because the password is _always_ a hash
 	 * when it's set,you need to run an additional not_empty rule in your controller

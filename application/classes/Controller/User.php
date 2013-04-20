@@ -8,15 +8,6 @@ class Controller_User extends My_Layout_User_Logged_Controller {
         $this->redirect('user/profile');
     }
 
-    public function action_contact() {
-        Helper_Mainmenu::setActiveItem('contact');
-        Helper_Output::factory()->link_js('users/contact');
-        $data['user'] = $this->logged_user;
-        $this->setTitle('Contact')
-                ->view('user/contact', $data)
-                ->render();
-    }
-
     public function action_profile() {
         Helper_Mainmenu::setActiveItem('profile');
         Helper_Output::factory()->link_css('datepicker')

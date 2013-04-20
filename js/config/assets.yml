@@ -4,5 +4,4 @@ template_extension: html
 gzip_assets: no
 javascripts:
   workspace:
-    - jst/search/*.html
-    - jst/apartments/*.html
+    - jst/tests/*.html

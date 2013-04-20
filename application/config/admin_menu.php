@@ -12,11 +12,23 @@ return array(
                                                       'icon'    => 'icon-user',
                                                       'status'  => 0,
                                                       ),
+                                      "courses"       => array(
+                                                      'title' 	=> 'Courses',
+                                                      'url'    	=> 'admin/courses',
+                                                      'icon'    => 'icon-tag',
+                                                      'status'  => 0,
+                                                      ),
                                       "tests"       => array(
                                                       'title' 	=> 'Tests',
                                                       'url'    	=> 'admin/tests',
-                                                      'icon'    => 'icon-home',
+                                                      'icon'    => 'icon-pencil',
                                                       'status'  => 0,
                                                         ),    
+                                      "results"       => array(
+                                                      'title' 	=> 'Results',
+                                                      'url'    	=> 'admin/results',
+                                                      'icon'    => 'icon-tasks',
+                                                      'status'  => 0,
+                                                        ),  
     
     );

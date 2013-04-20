@@ -74,19 +74,6 @@ class Helper_Output {
         }
     }
 
-    public static function get_apartment($apartment, $image_name) {
-        return URL::site(Kohana::$config->load('config')->get('apartments_files') . $apartment->id . '/photos/' . $image_name);
-    }
-
-    public static function get_apartment_first_img($apartment) {
-        $image_name = ORM::factory('Image')->where('apartment_id', '=', $apartment->id)->find()->name;
-        if ($image_name) {
-            return URL::site(Kohana::$config->load('config')->get('apartments_files') . $apartment->id . '/photos/' . $image_name);
-        } else {
-            return URL::site('img/icon-no-image-512.png');
-        }
-    }
-
     public static function getClearPathToAvatar($user) {
         $file = Kohana::$config->load('config')->get('user_files') . $user->id . '/avatar/' . $user->user_profile->avatar;
         if (file_exists($file)) {
@@ -132,24 +119,10 @@ class Helper_Output {
         }
     }
 
-    public static function get_status($status) {
-        if ($status) {
-            return '<span class="label label-success">Approved</span>';
-        } else {
-            return '<span class="label label-important">In the process of approving by administrator</span>';
-        }
-    }
-    
-    public static function get_alert($alert) {
-        $query = array(
-            'search' => $alert->search,
-            'from'   => $alert->from,
-            'to'     => $alert->to,
-            'lat'    => $alert->lat,
-            'lng'    => $alert->lng,
-            'type_id'   => json_decode($alert->type_id)
-        );
-        return URL::site('search/map') . URL::query($query);;
+    public static function cut_string($string, $maxlen) {
+        $len = (mb_strlen($string) > $maxlen) ? mb_strripos(mb_substr($string, 0, $maxlen), ' ') : $maxlen;
+        $cutStr = mb_substr($string, 0, $len);
+        return (mb_strlen($string) > $maxlen) ? $cutStr . '...' : $cutStr;
     }
 
 }
