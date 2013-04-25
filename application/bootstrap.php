@@ -112,6 +112,7 @@ Kohana::modules(array(
          'database'   => MODPATH.'database',     // Database access
          'orm'        => MODPATH.'orm',          // Object Relationship Mapping
 	 'image'      => MODPATH.'image',      // Image manipulation
+         'chromephp'  => MODPATH.'chromephp',
 	));
 
 Cookie::$salt 		= 'fdsh-tretgd-re-gfds-gt-erg-fdg-';

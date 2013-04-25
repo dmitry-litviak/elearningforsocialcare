@@ -17,31 +17,41 @@
                         </div>
                     </div>
                     <div class="control-group">
-                      <label class="control-label" for="email">Email:</label>
-                      <div class="controls">
-                        <input class="span10" type="text" id="email" readonly placeholder="Example: jd@travel.com" name="email" value="<?php echo $logged_user->email ?>">
-                      </div>
+                        <label class="control-label" for="email">Email:</label>
+                        <div class="controls">
+                            <input class="span10" type="text" id="email" readonly placeholder="Example: jd@travel.com" name="email" value="<?php echo $logged_user->email ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="hisc">HISC Office:</label>
+                        <div class="controls">
+                            <select name="hisc">
+                                <option <?php echo $logged_user->hisc == "York" ? "selected" : "" ?> value="York">York</option>
+                                <option <?php echo $logged_user->hisc == "Malton" ? "selected" : "" ?> value="Malton">Malton</option>
+                                <option <?php echo $logged_user->hisc == "Easingwold" ? "selected" : "" ?> value="Easingwold">Easingwold</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="span6">
-                        <label>Avatar:</label>
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"><img src="<?php echo Helper_Output::get_avatar($logged_user) ?>" /></div>
-                            <div>
-                                <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="avatar" /></span>
-                              <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                            </div>
+                    <label>Avatar:</label>
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"><img src="<?php echo Helper_Output::get_avatar($logged_user) ?>" /></div>
+                        <div>
+                            <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="avatar" /></span>
+                            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
                         </div>
+                    </div>
                 </div>
-                </div>
-            </fieldset>
+            </div>
+        </fieldset>
         <input class="btn btn-large" value="Cancel" type="reset">
         <input class="btn btn-large btn-primary" value="Save" type="submit">
     </form>
 </div>
-    
-    
 
 
-    
+
+
+
 

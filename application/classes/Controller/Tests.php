@@ -12,8 +12,13 @@ class Controller_Tests extends My_Layout_User_Logged_Controller {
     public function action_index() {
         Helper_Output::factory()->link_js('tests/index');
         if ($this->request->param('id')) {
-            $data['test'] = ORM::factory('test', $this->request->param('id'));
-            $data['questions'] = $data['test']->questions->find_all();
+            $data['test'] = ORM::factory('Test', $this->request->param('id'));
+            if ($data['test']->id) {
+                $data['questions'] = $data['test']->questions->find_all();
+            } else {
+                Helper_Alert::setStatus('error');
+                Helper_Alert::set_flash("Sorry, there are no test for this course");
+            }
             $this->setTitle('Test')
                     ->view('tests/index', $data)
                     ->render();
@@ -21,7 +26,7 @@ class Controller_Tests extends My_Layout_User_Logged_Controller {
             $this->redirect('courses');
         }
     }
-    
+
     public function action_result() {
         if ($this->request->post()) {
             $post = Helper_Output::clean($this->request->post());
@@ -41,19 +46,19 @@ class Controller_Tests extends My_Layout_User_Logged_Controller {
                 $model->values(array(
                     'test_id' => $post['test']['id'],
                     'user_id' => $this->logged_user->id,
-                    'score'   => $percent
+                    'score' => $percent
                 ));
                 $model->save();
                 Library_Mail::factory()
-                            ->setFrom(array('0' => 'noreply@elearningforsocialcare.co.uk'))
-                            ->setTo(array('0' => $this->logged_user->email))
-                            ->setSubject('Test Passed')
-                            ->setView('mail/test', array(
-                                'score' => $percent,
-                                'user' => $this->logged_user,
-                                'test' => ORM::factory('Test', $post['test']['id'])
-                            ))
-                            ->send();
+                        ->setFrom(array('0' => 'noreply@elearningforsocialcare.co.uk'))
+                        ->setTo(array('0' => $this->logged_user->email))
+                        ->setSubject('Test Passed')
+                        ->setView('mail/test', array(
+                            'score' => $percent,
+                            'user' => $this->logged_user,
+                            'test' => ORM::factory('Test', $post['test']['id'])
+                        ))
+                        ->send();
                 $this->redirect('results');
             } catch (ORM_Validation_Exception $e) {
                 Helper_Alert::setStatus('error');

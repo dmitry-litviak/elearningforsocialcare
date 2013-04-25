@@ -56,7 +56,7 @@ class Controller_Admin_Courses extends My_Layout_Admin_Controller {
         $columns[] = 'title';
         $columns[] = 'description';
         $columns[] = 'test';
-
+ 
         $courses = ORM::factory('Course');
 
         if ($this->request->query('sSearch')) {

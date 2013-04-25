@@ -1,3 +1,4 @@
+<?php if (!empty($questions) && count($questions)): ?>
 <form action="<?php echo URL::site('tests/result/') ?>" method="POST">
     <input type="hidden" value="<?php echo $test->id ?>" name="test[id]">
     <div class="tabbable">
@@ -34,3 +35,4 @@
         </div>
     </div>
 </form>
+<?php endif ?>

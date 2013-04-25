@@ -27,6 +27,16 @@
                         <input class="span12" type="password" id="password" placeholder="Password" name="password">
                     </div>
                 </div>
+                <div class="control-group">
+                    <label class="control-label" for="hisc">HISC Office:</label>
+                    <div class="controls">
+                        <select name="hisc">
+                            <option selected value="York">York</option>
+                            <option value="Malton">Malton</option>
+                            <option value="Easingwold">Easingwold</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="control-group pull-right">
                     <input class="btn btn-large btn-primary" value="Save" type="submit">
                 </div>

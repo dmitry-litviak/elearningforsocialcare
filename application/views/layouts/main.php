@@ -24,8 +24,8 @@
         <!--<div style="max-width: 100%">-->
         <div id="wrap">
             <?php echo View::factory('layouts/partials/header')->render(); ?>
-            <?php Helper_Alert::get_flash() ?>
             <div class="container">
+                <?php Helper_Alert::get_flash() ?>
                 <?php echo $content; ?>
             </div>
             <div id="push"></div>
